@@ -1,0 +1,5 @@
+﻿enum TypeOperation
+{
+    OperationClick,
+    NumberClick
+}

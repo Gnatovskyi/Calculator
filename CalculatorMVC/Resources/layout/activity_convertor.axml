@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/tollbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="?android:attr/actionBarSize"
+		android:elevation="4dp"
+		android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+		
+	</android.support.v7.widget.Toolbar>
+	<LinearLayout
+		android:id="@+id/linerlayout1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px">
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/content" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/linerlayout2"
+		android:layout_width="match_parent"
+		android:layout_marginTop="40dp"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px">
+		<Spinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="2"
+		android:layout_below="@id/tollbar"
+		android:id="@+id/spinner1" />
+		<Spinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="2"
+		android:layout_below="@id/tollbar"
+		android:id="@+id/spinner2" />
+	</LinearLayout>
+	
+</RelativeLayout>

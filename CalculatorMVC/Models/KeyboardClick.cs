@@ -21,8 +21,9 @@ namespace CalculatorMVC.Models
 
         public static void ClickNumber(View v, ref EditText content)
         {
-            var btn = (Button)v; 
-            if(btn != null) AddTextInContent(btn.Text, ref content, TypeOperation.NumberClick);
+            var btn = (Button)v;
+            if(resultFlag) { content.Text = ""; resultFlag = false; }
+            if (btn != null) { AddTextInContent(btn.Text, ref content, TypeOperation.NumberClick); }
         }
         public static void ClickOperation(View v, ref EditText content)
         {

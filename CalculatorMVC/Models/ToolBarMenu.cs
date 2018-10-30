@@ -9,17 +9,19 @@ namespace CalculatorMVC.Models
 {
     static class ToolBarMenu
     {
-        static public bool OptionSelectedItem(int ItemID, Context context, out Intent nextactivity)
+        static public bool OptionSelectedItem(int ItemID, Context context, out Intent nextactivity, string content)
         {
             switch (ItemID)
             {
                 case Resource.Id.calculator:
                     Toast.MakeText(context, "Calculator clicked", ToastLength.Short).Show();
                     nextactivity = new Intent(context, typeof(MainActivity));
+                    nextactivity.PutExtra("content", content);
                     return true;
                 case Resource.Id.convertor:
                     nextactivity = new Intent(context, typeof(ConvertorActivity));
                     Toast.MakeText(context, "Convertor clicked", ToastLength.Short).Show();
+                    nextactivity.PutExtra("content", content);
                     return true;
                 default:
                     {

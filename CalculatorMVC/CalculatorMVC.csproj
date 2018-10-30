@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="ConvertorActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\Convertor.cs" />
     <Compile Include="Models\Enums\TypeOperation.cs" />
     <Compile Include="Models\KeyboardClick.cs" />
     <Compile Include="Models\ToolBarMenu.cs" />
@@ -99,6 +100,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
       <Version>27.0.2.1</Version>

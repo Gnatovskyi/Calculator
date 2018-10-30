@@ -18,7 +18,7 @@ namespace CalculatorMVC
         EditText content;
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState); 
+            base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             content = (EditText)FindViewById(Resource.Id.content);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.tollbar);
@@ -26,7 +26,7 @@ namespace CalculatorMVC
             //-----------------------REMOVE CURSOR----------------
             content.SetCursorVisible(false);
             content.InputType = InputTypes.Null;
-
+            content.Text = Intent.GetStringExtra("content");
             //-----------------------TEXTCHANGE-----------------------
             content.TextChanged += delegate
             {
@@ -65,7 +65,7 @@ namespace CalculatorMVC
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            if (ToolBarMenu.OptionSelectedItem(item.ItemId, this, out Intent intent))
+            if (ToolBarMenu.OptionSelectedItem(item.ItemId, this, out Intent intent, content.Text))
             {
                 StartActivity(intent);
                 OnStop();

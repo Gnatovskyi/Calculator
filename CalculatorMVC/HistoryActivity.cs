@@ -19,19 +19,17 @@ namespace CalculatorMVC
     [Activity(Label = "History")]
     public class HistoryActivity : AppCompatActivity
     {
+        List<string> items = new List<string>();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_history);
-            TextView view = FindViewById<TextView>(Resource.Id.information);
+            ListView view = FindViewById<ListView>(Resource.Id.information);
             Database db = new Database();
-            if (view.Text.Equals("Empty") && db.Select() != null)
-            {
-                view.Text = null;
-                db.Select().ForEach(x => view.Text += $"{x}\n");
-            }
+            db.Select().ForEach(x => items.Add(x.ToString()));
+            var adapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, items);
+            view.Adapter = adapter;
         }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.toolbarmenu, menu);

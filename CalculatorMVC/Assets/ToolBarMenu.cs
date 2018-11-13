@@ -5,7 +5,7 @@ using System.Text;
 using Android.Content;
 using Android.Widget;
 
-namespace CalculatorMVC.Models
+namespace CalculatorMVC.Assets
 {
     static class ToolBarMenu
     {
@@ -22,6 +22,10 @@ namespace CalculatorMVC.Models
                     nextactivity = new Intent(context, typeof(ConvertorActivity));
                     Toast.MakeText(context, "Convertor clicked", ToastLength.Short).Show();
                     nextactivity.PutExtra("content", content);
+                    return true;
+                case Resource.Id.history:
+                    nextactivity = new Intent(context, typeof(HistoryActivity));
+                    Toast.MakeText(context, "History clicked", ToastLength.Short).Show();
                     return true;
                 default:
                     {

@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using CalculatorMVC.Resources.Models;
 
-namespace CalculatorMVC.Models
+namespace CalculatorMVC.Assets
 {
-    static class KeyboardClick
+    static class Calculation
     {
+        private static History history;
         private static bool dotFlag;
         private static bool resultFlag;
         public static string operand = "";
@@ -119,6 +113,13 @@ namespace CalculatorMVC.Models
                 {
                     operand = operand.Substring(0, 23);
                 }
+                Resources.DataHelper.DataBase db = new Resources.DataHelper.DataBase();
+                history = new History
+                {
+                    Equation = content.Text,
+                    Result = operand
+                };
+                db.InsertIntoTableHistory(history);
                 content.Text = operand;
                 if (dotFlag) dotFlag = false;
                 resultFlag = true;

@@ -9,5 +9,9 @@
     android:id="@+id/convertor"
     app:showAsAction="never"
     android:title="Convertor"/>
-  
- </menu>
+  <item
+    android:id="@+id/history"
+    app:showAsAction="never"
+    android:title="History"/>
+
+</menu>

@@ -10,7 +10,7 @@ using Android.Support.V7.App;
 using Android.Text;
 using Android.Views;
 using Android.Widget;
-using CalculatorMVC.Models;
+using CalculatorMVC.Assets;
 using Java.Interop;
 
 namespace CalculatorMVC
@@ -102,12 +102,12 @@ namespace CalculatorMVC
         [Export("OnClickNumber")]
         public void OnClickNumber(View v)
         {
-           KeyboardClick.ClickNumber(v, ref _content);
+           Calculation.ClickNumber(v, ref _content);
         }
         [Export("OnClickOperation")]
         public void OnClickOperation(View v)
         {
-           KeyboardClick.ClickOperation(v, ref _content);
+           Calculation.ClickOperation(v, ref _content);
         }
         [Export("OnClickSubmit")]
         public void OnClickSubmit(View v)

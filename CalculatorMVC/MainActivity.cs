@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Text;
-using CalculatorMVC.Models;
+using CalculatorMVC.Assets;
 using Android.Widget;
 using Java.Interop;
 using System;
@@ -32,13 +32,13 @@ namespace CalculatorMVC
             {
                 if (content.Text.Equals(""))
                 {
-                    KeyboardClick.operand = "";
+                    Calculation.operand = "";
                 }
                 string x = content.Text;
                 try
                 {
                     double result = Convert.ToDouble(new DataTable().Compute(x, null));
-                    KeyboardClick.operand = result.ToString();
+                    Calculation.operand = result.ToString();
                 }
                 catch
                 {
@@ -49,13 +49,13 @@ namespace CalculatorMVC
         [Export("OnClickNumber")]
         public void OnClickNumber(View v)
         {
-            KeyboardClick.ClickNumber(v, ref content);
+            Calculation.ClickNumber(v, ref content);
         }
 
         [Export("OnClickOperation")]
         public void OnClickOperation(View v)
         {
-            KeyboardClick.ClickOperation(v, ref content);
+            Calculation.ClickOperation(v, ref content);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

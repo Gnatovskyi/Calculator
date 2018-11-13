@@ -2631,9 +2631,6 @@ namespace CalculatorMVC
 			// aapt resource value: 0x7f0800cf
 			public const int history = 2131230927;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int historylist = 2131230884;
-			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
 			
@@ -2654,6 +2651,9 @@ namespace CalculatorMVC
 			
 			// aapt resource value: 0x7f0800c4
 			public const int info = 2131230916;
+			
+			// aapt resource value: 0x7f0800a4
+			public const int information = 2131230884;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;

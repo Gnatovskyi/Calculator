@@ -11,12 +11,10 @@
 		android:elevation="4dp"
 		android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
 	</android.support.v7.widget.Toolbar>
-
-	<ListView
-		android:minWidth="25px"
-		android:minHeight="25px"
+	<TextView
+		android:text="Empty"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:id="@+id/historylist" />
-
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="30sp"
+		android:id="@+id/information" />
 </LinearLayout>

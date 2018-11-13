@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using Android.Views;
+using SQLite;
 using Android.Widget;
 using CalculatorMVC.Resources.Models;
 
@@ -8,11 +9,10 @@ namespace CalculatorMVC.Assets
 {
     static class Calculation
     {
-        private static History history;
+        private static Database database = new Database();
         private static bool dotFlag;
         private static bool resultFlag;
         public static string operand = "";
-
         public static void ClickNumber(View v, ref EditText content)
         {
             var btn = (Button)v;
@@ -113,13 +113,12 @@ namespace CalculatorMVC.Assets
                 {
                     operand = operand.Substring(0, 23);
                 }
-                Resources.DataHelper.DataBase db = new Resources.DataHelper.DataBase();
-                history = new History
+                History history = new History
                 {
                     Equation = content.Text,
                     Result = operand
                 };
-                db.InsertIntoTableHistory(history);
+                database.Insert(history);
                 content.Text = operand;
                 if (dotFlag) dotFlag = false;
                 resultFlag = true;

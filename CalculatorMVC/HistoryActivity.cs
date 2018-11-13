@@ -23,8 +23,13 @@ namespace CalculatorMVC
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_history);
-            ListView view = FindViewById<ListView>(Resource.Id.historylist);
-            
+            TextView view = FindViewById<TextView>(Resource.Id.information);
+            Database db = new Database();
+            if (view.Text.Equals("Empty") && db.Select() != null)
+            {
+                view.Text = null;
+                db.Select().ForEach(x => view.Text += $"{x}\n");
+            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
